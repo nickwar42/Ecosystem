@@ -1,0 +1,89 @@
+public class DataStructureTester {
+	
+	public static void main(String[] args) {
+		IntArrayBag bag = new IntArrayBag();
+			bag.add(5);
+			bag.add(4);
+			bag.add(3);
+			bag.add(2);
+			bag.add(1);
+			bag.add(6);
+			bag.add(7);
+			bag.add(8);
+
+	System.out.println("Bag: \n" + bag.toString());
+	System.out.println("Current size: " + bag.size());
+	System.out.println("Capacity: " + bag.getCapacity());
+	
+	System.out.println("/////////////////////////////////////");
+
+		Stack<Integer> s = new Stack<>();
+			s.push(5);
+			s.push(4);
+			s.push(3);
+			s.push(2);
+			s.push(1);
+		System.out.println("Stack: " + s.toString());
+		System.out.println("Top Value: " + s.peek());
+			s.pop(); //Removes 1
+			s.pop(); //Removes 2
+		System.out.println("After removing two elements, the stack is: "+ s.toString());
+		System.out.println("/////////////////////////////////////");
+		
+		Queue<Integer> q = new Queue();
+			q.enqueue(5);
+			q.enqueue(4);
+			q.enqueue(3);
+			q.enqueue(2);
+			q.enqueue(1);
+		System.out.println("Queue: "+ q.toString());
+		System.out.println("Length of queue: "+ q.length());
+			q.dequeue(); //Removes 5
+			q.dequeue(); //Removes 4
+		System.out.println("After removing two elements, the queue is: "+ q.toString());
+		System.out.println("/////////////////////////////////////");
+		
+		//Binary Tree
+		BiTreeNode n = new BiTreeNode(10, null, null);
+			n.insert(4);
+			n.insert(3);
+			n.insert(2);
+			n.insert(7);
+			n.insert(24);
+			n.insert(100);
+			n.insert(34);
+
+		System.out.println("Binary Tree: \n" + n.toString());
+		n.removeLeftmost(); //Removes 2
+		
+		System.out.println("Binary Tree after deletion: \n" + n.toString());
+
+		System.out.println("/////////////////////////////////////");
+		
+		MaxHeap h = new MaxHeap(10);
+			h.insert(91);
+			h.insert(77);
+			h.insert(46);
+			h.insert(69);
+			h.insert(3);
+			h.insert(11);
+			h.insert(85);
+			h.insert(79);
+
+		System.out.println("Max Heap: ");
+			h.print();
+		System.out.println("Max/Root = " + h.extractMax());
+		System.out.println("/////////////////////////////////////");
+		
+		//This doesn't print correctly... why, u dummy?
+		BTree<Integer,Integer> b = new BTree<Integer, Integer>();
+			b.put(18, 18);
+			b.put(6, 6);
+			b.put(22, 22);
+		System.out.println("BTree: \n" + b.toString());
+		System.out.println("Size: " + b.size());
+		System.out.println("/////////////////////////////////////");
+	}
+}
+
+
